@@ -32,11 +32,11 @@
   when: hetzner_installimage_run
 
 - name: include rescue mode
-  include: rescuemode.yml
+  import_tasks: rescuemode.yml
   when: hetzner_installimage_run and not ansible_check_mode
 
 - name: include installimage
-  include: installimage.yml
+  import_tasks: installimage.yml
   when: hetzner_installimage_run and not ansible_check_mode
 
 ...
